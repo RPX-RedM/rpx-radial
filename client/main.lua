@@ -89,7 +89,7 @@ lib.disableRadial(false)
 
 AddStateBagChangeHandler("job", nil, function(bagName, key, value) 
     if GetPlayerFromStateBagName(bagName) ~= PlayerId() then return end
-	CurrentJob.name = value.name
+    CurrentJob.name = value.name
     CurrentJob.rank = value.rank
     CurrentJob.duty = value.duty
 
