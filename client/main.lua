@@ -1,5 +1,4 @@
 local CurrentJob = { name = nil, rank = nil, duty = false }
-local coreExports = exports['rpx-core']
 
 --
 -- Main radial menus that are available to everyone.
@@ -135,8 +134,8 @@ function ResetJobMenus()
     end
     if CurrentJob.duty == false and Config.JobDutyOnly then return end
 
-    local hasSheriffMenu = coreExports:HasJobPermission(CurrentJob.name, CurrentJob.rank, 'sheriff:general')
-    local hasDoctorMenu = coreExports:HasJobPermission(CurrentJob.name, CurrentJob.rank, 'doctor:general')
+    local hasSheriffMenu = exports['rpx-core']:HasJobPermission(CurrentJob.name, CurrentJob.rank, 'sheriff:general')
+    local hasDoctorMenu = exports['rpx-core']:HasJobPermission(CurrentJob.name, CurrentJob.rank, 'doctor:general')
 
     if hasSheriffMenu then
         lib.addRadialItem({
